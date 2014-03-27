@@ -1,10 +1,20 @@
 html {
 	background-color: #EBECEE;
 }
+.fix-status-bar {
+	background-color: #F73938;
+	opacity: .5;
+	height: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
 body {
 	margin: 0;
 	padding: 0;
 	padding-bottom: 50px;
+	padding-top: 20px;
 }
 .wrap {
 	display: -webkit-box;
