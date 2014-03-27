@@ -15,7 +15,6 @@
 		body {
 			margin: 0;
 			padding: 0;
-			padding-top: 10px;
 		}
 		.wrap {
 			display: -webkit-box;
@@ -26,7 +25,7 @@
 			background-color: #FFF;
 			height: 50px;
 			line-height: 50px;
-			font-size: 12px;
+			/*border: 1px solid #CCC;*/
 			border-radius: 2px;
 			text-align: center;
 			margin: 0.3em;
@@ -90,10 +89,10 @@
 			color: #666;
 			vertical-align: middle;
 			padding: 0 10px;
+			margin-bottom: 5px;
 		}
 		.item:hover {
 			background-color: #f9f9f9;
-			overflow: hidden;
 		}
 		.item .arr {
 			float: right;
@@ -128,17 +127,13 @@
 			line-height: 25px;
 			text-align: center;
 			text-decoration: none;
-			margin: 0 0.3em;
+			margin: 0 5px;
 
 			border-radius: 5px;
 			
 			-webkit-box-flex: 1;
 			-webkit-box-align: center;
 			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-		}
-		.btn .span {
-			display: inline-block;
-			text-align: center;
 		}
 		.btn:hover {
 			background-color: #ED2A2A;
@@ -174,26 +169,36 @@
 			-webkit-box-flex: 1;
 			-webkit-box-align: center;
 		}
+
+		.list-group {
+			margin-top: 10px;
+		}
+		.list-group .list-item {
+			height: 30px;
+			line-height: 30px;
+			padding-left: 10px;
+			text-decoration: none;
+			font-size: 16px;
+			color: #A1A1A1;
+			background-color: #FFF;
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+			box-shadow: 0 0 1px #CCC, 0 0 1px #CCC, 0 0 1px #CCC;
+		}
+		.list-group .list-item:hover {
+			background-color: #F2f2f2;
+		}
 	</style>
 </head>
 <body>
 
 	<div class="btn-group">
-		<a href="javascript:void(0);" class="btn grey">
-			<span class="span">三个字</span>
-		</a>
-		<a href="javascript:void(0);" class="btn">
-			<span class="span">&nbsp;俩字&nbsp;</span>
-		</a>
+		<a href="javascript:void(0);" class="btn grey">三个字</a>
+		<a href="javascript:void(0);" class="btn">俩字</a>
 	</div>
 	
 	<div class="btn-group">
-		<a href="javascript:void(0);" class="btn grey">
-			<span class="span">注册的</span>
-		</a>
-		<a href="javascript:void(0);" class="btn">
-			<span class="span">&#160;登录&#160;</span>
-		</a>
+		<a href="javascript:void(0);" class="btn grey">注册</a>
+		<a href="javascript:void(0);" class="btn">登录</a>
 	</div>
 
 	<div class="btn-group">
@@ -202,50 +207,16 @@
 
 	<!-- <div class="ui-mask"></div> -->
 
-	<div class="wrap">
-		<div class="child">我的关注</div>
-		<div class="child">我要充值</div>
-		<div class="child">我要提现</div>
-		<div class="child">新手指南</div>
+	<div class="list-group">
+		<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
+		<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
+		<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
 	</div>
 
-	<div class="wrap1">
-		<div class="item">我的关注</div>
-		<div class="item">我的</div>
-	</div>
-
-	<a href="" class="item">
-		支付宝支付
-		<i class="arr"></i>
-	</a>
-	<a href="" class="item">
-		支付宝支付
-		<i class="arr"></i>
-	</a>
-	<a href="" class="item">
-		支付宝支付
-		<i class="arr"></i>
-	</a>
-	<a href="" class="item">
-		支付宝支付
-		<i class="arr"></i>
-	</a>
-	<a href="" class="item">
-		支付宝支付
-		<i class="arr"></i>
-	</a>
-	<a href="" class="item">
-		支付宝支付
-		<i class="arr"></i>
-	</a>
-
-	<div class="btn-group">
-		<a href="javascript:void(0);" class="btn grey">注册</a>
-		<a href="javascript:void(0);" class="btn">登录</a>
-	</div>
-
-	<div class="btn-group">
-		<a href="javascript:void(0);" class="btn">立即购买</a>
+	<div class="list-group">
+		<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
+		<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
+		<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
 	</div>
 
 
