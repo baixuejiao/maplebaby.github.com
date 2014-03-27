@@ -11,7 +11,12 @@
 	<style>
 		html {
 			background-color: #EBECEE;
-		} 
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			padding-top: 10px;
+		}
 		.wrap {
 			display: -webkit-box;
 			-webkit-box-orient: horizontal;
@@ -21,7 +26,7 @@
 			background-color: #FFF;
 			height: 50px;
 			line-height: 50px;
-			/*border: 1px solid #CCC;*/
+			font-size: 12px;
 			border-radius: 2px;
 			text-align: center;
 			margin: 0.3em;
@@ -85,10 +90,10 @@
 			color: #666;
 			vertical-align: middle;
 			padding: 0 10px;
-			margin-bottom: 5px;
 		}
 		.item:hover {
 			background-color: #f9f9f9;
+			overflow: hidden;
 		}
 		.item .arr {
 			float: right;
@@ -123,13 +128,17 @@
 			line-height: 25px;
 			text-align: center;
 			text-decoration: none;
-			margin: 0 5px;
+			margin: 0 0.3em;
 
 			border-radius: 5px;
 			
 			-webkit-box-flex: 1;
 			-webkit-box-align: center;
 			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		}
+		.btn .span {
+			display: inline-block;
+			text-align: center;
 		}
 		.btn:hover {
 			background-color: #ED2A2A;
@@ -147,13 +156,21 @@
 <body>
 
 	<div class="btn-group">
-		<a href="javascript:void(0);" class="btn grey">三个字</a>
-		<a href="javascript:void(0);" class="btn">俩字</a>
+		<a href="javascript:void(0);" class="btn grey">
+			<span class="span">三个字</span>
+		</a>
+		<a href="javascript:void(0);" class="btn">
+			<span class="span">&nbsp;俩字&nbsp;</span>
+		</a>
 	</div>
 	
 	<div class="btn-group">
-		<a href="javascript:void(0);" class="btn grey">注册</a>
-		<a href="javascript:void(0);" class="btn">登录</a>
+		<a href="javascript:void(0);" class="btn grey">
+			<span class="span">注册的</span>
+		</a>
+		<a href="javascript:void(0);" class="btn">
+			<span class="span">&#160;登录&#160;</span>
+		</a>
 	</div>
 
 	<div class="btn-group">
@@ -163,10 +180,10 @@
 	<!-- <div class="ui-mask"></div> -->
 
 	<div class="wrap">
-		<div class="child fn-fs12">我的关注</div>
-		<div class="child fn-fs12">我要充值</div>
-		<div class="child fn-fs12">我要提现</div>
-		<div class="child fn-fs12">新手指南</div>
+		<div class="child">我的关注</div>
+		<div class="child">我要充值</div>
+		<div class="child">我要提现</div>
+		<div class="child">新手指南</div>
 	</div>
 
 	<div class="wrap1">
