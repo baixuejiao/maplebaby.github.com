@@ -19,7 +19,7 @@
 </head>
 <body ng-app="phoneApp">
 	<div class="loading">
-		
+		加载中。。。
 	</div>
 
 	<div id="app">
@@ -106,12 +106,15 @@
 	<!-- <script src="js/angular.min.js"></script> -->
 	<script src="js/zepto.min.js"></script>
 	<script>
-		$("#app").bind("touchmove touchend", function(e) {
+		$("#app").bind("touchmove", function(e) {
 			var h = Math.abs(e.layerY);
 			$("#app").css({"marginTop": h});
 			console.log(e.layerY);
 			e.preventDefault();
 			// e.preventDefault();
+		});
+		$("#app").bind("touchend", function(e) {
+			$("#app").css({"marginTop": 0});
 		});
 	</script>
 </body>
