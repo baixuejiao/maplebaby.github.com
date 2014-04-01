@@ -106,23 +106,30 @@
 	<!-- <script src="js/angular.min.js"></script> -->
 	<script src="js/zepto.min.js"></script>
 	<script>
+
 		var start_y = 0, current_y, h, flag = false;
+		// $("#app").bind("swipeDown", function(e) {
+		// 	console.log(e);
+		// });
+
 		$("#app").bind("touchstart", function(e) {
-			start_y = Math.abs(e.layerY);
+			var th = e.touches[0]
+			start_y = Math.abs(th.clientY);
 			e.preventDefault();
 		});
 		$("#app").bind("touchmove", function(e) {
-			current_y = Math.abs(e.layerY);
-			var dist = current_y-start_y;
+			var th = e.changedTouches[0]
+			current_y = Math.abs(th.clientY);
 
-			console.log(dist);
+			console.log(current_y +"-"+ start_y);
+			var dist = current_y - start_y;
+
 			if(dist>0 && dist<75) {
 				$("#app").animate({"marginTop": dist});
 				flag = true;
 			}
 		});
 		$("#app").bind("touchend", function(e) {
-			console.log(flag);
 			if(flag) {
 				$("#app").animate({"marginTop": 0});
 				flag = false;
