@@ -218,6 +218,7 @@ a {
 	color: #FFF;
 	text-align: center;
 	z-index: -1;
+	-webkit-transform: translate3d(0,0,0)
 }
 
 #app {

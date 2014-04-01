@@ -113,7 +113,7 @@
 		});
 		$("#app").bind("touchmove", function(e) {
 			current_y = Math.abs(e.layerY);
-			h = (current_y-start_y) > 150 ? 150 : (current_y-start_y);
+			h = (current_y-start_y) > 50 ? 50 : (current_y-start_y);
 			console.log(h);
 			$("#app").animate({"marginTop": h});
 			e.preventDefault();
