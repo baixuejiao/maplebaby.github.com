@@ -106,14 +106,16 @@
 	<!-- <script src="js/angular.min.js"></script> -->
 	<script src="js/zepto.min.js"></script>
 	<script>
-		var start_y = 0, current_y;
+		var start_y = 0, current_y, h;
 		$("#app").bind("touchstart", function(e) {
 			start_y = Math.abs(e.layerY);
 			e.preventDefault();
 		});
 		$("#app").bind("touchmove", function(e) {
 			current_y = Math.abs(e.layerY);
-			$("#app").animate({"marginTop": current_y-start_y});
+			h = (current_y-start_y) > 150 ? 150 : (current_y-start_y);
+			console.log(h);
+			$("#app").animate({"marginTop": h});
 			e.preventDefault();
 		});
 		$("#app").bind("touchend", function(e) {
