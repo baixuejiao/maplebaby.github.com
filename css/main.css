@@ -213,6 +213,7 @@ a {
 	height: 100%;
 	background-color: #999;
 	position: absolute;
+	padding-top: 10px;
 	top: 0;
 	left: 0;
 	color: #FFF;

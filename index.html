@@ -113,20 +113,22 @@
 		// });
 
 		$("#app").bind("touchstart", function(e) {
-			var th = e.touches[0]
+			var th = e.touches[0];
 			start_y = Math.abs(th.clientY);
 			e.preventDefault();
 		});
 		$("#app").bind("touchmove", function(e) {
-			var th = e.changedTouches[0]
+			var th = e.touches[0];
 			current_y = Math.abs(th.clientY);
 
 			console.log(current_y +"-"+ start_y);
 			var dist = current_y - start_y;
 
-			if(dist>0 && dist<75) {
-				$("#app").animate({"marginTop": dist});
+			if(dist>0 && dist<50) {
+				$("#app").animate({"marginTop": dist}, 10);
 				flag = true;
+			} else if(dist<0){
+				$("#app").css({"marginTop": dist});
 			}
 		});
 		$("#app").bind("touchend", function(e) {
