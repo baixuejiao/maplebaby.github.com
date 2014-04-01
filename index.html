@@ -109,6 +109,7 @@
 		var start_y = 0, current_y, h, flag = false;
 		$("#app").bind("touchstart", function(e) {
 			start_y = Math.abs(e.layerY);
+			e.preventDefault();
 		});
 		$("#app").bind("touchmove", function(e) {
 			current_y = Math.abs(e.layerY);
