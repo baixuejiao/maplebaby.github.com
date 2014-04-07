@@ -2,7 +2,6 @@
 <html manifest="cache.manifest">
 <head>
 	<meta charset="UTF-8">
-	<meta name="renderer" content="webkit" />
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
 	<meta name="apple-mobile-web-app-title" content="爱游游">
@@ -41,8 +40,6 @@
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="btn">立即购买</a>
 		</div>
-
-		<!-- <div class="ui-mask"></div> -->
 
 		<div class="wrap">
 			<div class="child">我的关注</div>
@@ -85,6 +82,9 @@
 			<a href="javascript:void(0);" class="btn">立即购买</a>
 		</div>
 
+		<div class="btn-group">
+			<a href="javascript:void(0);" class="btn">立即购买</a>
+		</div>
 
 		<div class="action-bar">
 			<a href="index.html" class="bar-item active">&nbsp;&nbsp;首页&nbsp;&nbsp;</a>
@@ -95,7 +95,6 @@
 		</div>
 	</div>
 	
-
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="js/jquery.pjax.js"></script>
 	<script>
@@ -106,11 +105,44 @@
 			cache: true,
 			storage: true,
 			titleSuffix: '',
-			filter: function(){},
+			filter: function(){
+
+			},
 			callback: function(){
-				console.log("fsdf")
+				console.log("fsdf");
 			}
 		});
+
+		// var start_y = 0, current_y, h, flag = false;
+		// $("#app").bind("swipeDown", function(e) {
+		// 	console.log(e);
+		// });
+
+		// $("#app").bind("touchstart", function(e) {
+		// 	var th = e.touches[0];
+		// 	start_y = Math.abs(th.clientY);
+		// 	e.preventDefault();
+		// });
+		// $("#app").bind("touchmove", function(e) {
+		// 	var th = e.touches[0];
+		// 	current_y = Math.abs(th.clientY);
+
+		// 	console.log(current_y +"-"+ start_y);
+		// 	var dist = current_y - start_y;
+
+		// 	if(dist>0 && dist<50) {
+		// 		$("#app").animate({"marginTop": dist}, 10);
+		// 		flag = true;
+		// 	} else if(dist<0){
+		// 		$("#app").css({"marginTop": dist});
+		// 	}
+		// });
+		// $("#app").bind("touchend", function(e) {
+		// 	if(flag) {
+		// 		$("#app").animate({"marginTop": 0});
+		// 		flag = false;
+		// 	}
+		// });
 	</script>
 </body>
 </html>

@@ -15,6 +15,10 @@ body {
 	padding: 0;
 	padding-bottom: 50px;
 }
+div {
+	margin: 0;
+	padding: 0;
+}
 .wrap {
 	display: -webkit-box;
 	-webkit-box-orient: horizontal;
@@ -202,4 +206,24 @@ a {
 }
 .list-group .list-item:hover {
 	background-color: #F2f2f2;
+}
+
+.loading {
+	width: 100%;
+	height: 100%;
+	background-color: #999;
+	position: absolute;
+	padding-top: 10px;
+	top: 0;
+	left: 0;
+	color: #FFF;
+	text-align: center;
+	z-index: -1;
+	-webkit-transform: translate3d(0,0,0)
+}
+
+#app {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-color: #EBECEE;
 }
