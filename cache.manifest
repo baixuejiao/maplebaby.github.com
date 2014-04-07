@@ -2,7 +2,8 @@ CACHE MANIFEST
 ###2014-03-27 -v1
 css/main.css
 
-js/zepto.min.js
+js/jquery-1.7.1.js
+js/jquery.pjax.js
 
 startup.png
 
