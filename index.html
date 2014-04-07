@@ -18,6 +18,9 @@
 	<link href="startup.png" rel="apple-touch-startup-image">
 </head>
 <body>
+	<div class="loading">
+		正在加载中。。。
+  	</div>
 	<div id="app">
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="btn grey">
@@ -82,10 +85,6 @@
 			<a href="javascript:void(0);" class="btn">立即购买</a>
 		</div>
 
-		<div class="btn-group">
-			<a href="javascript:void(0);" class="btn">立即购买</a>
-		</div>
-
 		<div class="action-bar">
 			<a href="index.html" class="bar-item active">&nbsp;&nbsp;首页&nbsp;&nbsp;</a>
 			<a href="list.html" class="bar-item">游戏列表</a>
@@ -96,53 +95,37 @@
 	</div>
 	
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
-	<script type="text/javascript" src="js/jquery.pjax.js"></script>
 	<script>
-		$.pjax({
-			selector: 'a',
-			container: '#app',
-			show: 'fade',
-			cache: true,
-			storage: true,
-			titleSuffix: '',
-			filter: function(){
-
-			},
-			callback: function(){
-				console.log("fsdf");
-			}
-		});
-
-		// var start_y = 0, current_y, h, flag = false;
+		var start_y = 0, current_y, h, flag = false;
 		// $("#app").bind("swipeDown", function(e) {
 		// 	console.log(e);
 		// });
 
-		// $("#app").bind("touchstart", function(e) {
-		// 	var th = e.touches[0];
-		// 	start_y = Math.abs(th.clientY);
-		// 	e.preventDefault();
-		// });
-		// $("#app").bind("touchmove", function(e) {
-		// 	var th = e.touches[0];
-		// 	current_y = Math.abs(th.clientY);
+		$("#app").bind("touchstart", function(e) {
+			var th = e.originalEvent.touches[0];
+			start_y = th.clientY;
+			e.preventDefault();
+		});
+		$("#app").bind("touchmove", function(e) {
+			console.log(e);
+			var th = e.originalEvent.touches[0];
+			current_y = th.clientY;
 
-		// 	console.log(current_y +"-"+ start_y);
-		// 	var dist = current_y - start_y;
+			var dist = current_y - start_y;
 
-		// 	if(dist>0 && dist<50) {
-		// 		$("#app").animate({"marginTop": dist}, 10);
-		// 		flag = true;
-		// 	} else if(dist<0){
-		// 		$("#app").css({"marginTop": dist});
-		// 	}
-		// });
-		// $("#app").bind("touchend", function(e) {
-		// 	if(flag) {
-		// 		$("#app").animate({"marginTop": 0});
-		// 		flag = false;
-		// 	}
-		// });
+			if(dist>0 && dist<50) {
+				$("#app").animate({"marginTop": dist}, 10);
+				flag = true;
+			} else if(dist<0){
+				$("#app").css({"marginTop": dist});
+			}
+		});
+		$("#app").bind("touchend", function(e) {
+			if(flag) {
+				$("#app").animate({"marginTop": 0});
+				flag = false;
+			}
+		});
 	</script>
 </body>
 </html>
