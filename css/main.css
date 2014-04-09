@@ -83,6 +83,7 @@ a {
 	padding: 5px;
 }
 .item {
+	font-size: 14px;
 	text-decoration: none;
 	background-color: #FFF;
 	box-shadow: 0 0 1px #CCC, 0 0 1px #CCC, 0 0 1px #CCC;
