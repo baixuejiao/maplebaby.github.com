@@ -101,47 +101,55 @@
 			<a href="test.html" class="bar-item">我的交易</a>
 			<a href="test.html" class="bar-item">&nbsp;&nbsp;更多&nbsp;&nbsp;</a>
 		</div>
+
+
+		<select name="" id="J_select">
+			<option value="">dsfsfsdf</option>
+			<option value="">dsfsfsdf</option>
+			<option value="">dsfsfsdf</option>
+			<option value="">dsfsfsdf</option>
+			<option value="">dsfsfsdf</option>
+			<option value="">dsfsfsdf</option>
+		</select>
 	</div>
 	
 	<script type="text/javascript" src="js/zepto.min.js"></script>
 	<script type="text/javascript" src="js/touch.js"></script>
 	<script>
-		$("#app").swipeDown(function(e) {
-			console.log(e);
-			var elem = $(e.target);
-			var dist = elem.clientTop;
-
-			if(dist>0 && dist<50) {
-				$("#app").animate({"marginTop": dist}, 10);
-			}
-		});
-
-		// var start_y = 0, current_y, h, flag = false;
-		// $("#app").bind("touchstart", function(e) {
-		// 	var th = e.originalEvent.touches[0];
-		// 	start_y = th.clientY;
-		// 	e.preventDefault();
-		// });
-		// $("#app").bind("touchmove", function(e) {
+		// $("body").swipeDown(function(e) {
 		// 	console.log(e);
-		// 	var th = e.originalEvent.touches[0];
-		// 	current_y = th.clientY;
-
-		// 	var dist = current_y - start_y;
+		// 	var elem = $(e.target);
+		// 	var dist = elem.clientTop;
 
 		// 	if(dist>0 && dist<50) {
 		// 		$("#app").animate({"marginTop": dist}, 10);
-		// 		flag = true;
-		// 	} else if(dist<0){
-		// 		$("#app").css({"marginTop": dist});
 		// 	}
 		// });
-		// $("#app").bind("touchend", function(e) {
-		// 	if(flag) {
-		// 		$("#app").animate({"marginTop": 0});
-		// 		flag = false;
-		// 	}
-		// });
+
+		var start_y = 0, current_y, h, flag = false;
+		$("#app").bind("touchstart", function(e) {
+			var th = e.touches[0];
+			start_y = th.clientY;
+			e.preventDefault();
+		});
+		$("#app").bind("touchmove", function(e) {
+			var th = e.touches[0];
+			current_y = th.clientY;
+
+			var scrollTop = $("body").scrollTop();
+			var dist = current_y - start_y;
+
+			if(scrollTop<=0 && dist>0 && dist<50) {
+				$("#app").animate({"marginTop": dist}, 10);
+				flag = true;
+			}
+		});
+		$("#app").bind("touchend", function(e) {
+			if(flag) {
+				$("#app").animate({"marginTop": 0});
+				flag = false;
+			}
+		});
 	</script>
 </body>
 </html>
