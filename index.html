@@ -94,23 +94,13 @@
 			</a>
 		</div>
 
-		<div class="action-bar">
+		<!-- <div class="action-bar">
 			<a href="index.html" class="bar-item active">&nbsp;&nbsp;首页&nbsp;&nbsp;</a>
 			<a href="list.html" class="bar-item">游戏列表</a>
 			<a href="test.html" class="bar-item">&nbsp;&nbsp;搜索&nbsp;&nbsp;</a>
 			<a href="test.html" class="bar-item">我的交易</a>
 			<a href="test.html" class="bar-item">&nbsp;&nbsp;更多&nbsp;&nbsp;</a>
-		</div>
-
-
-		<select name="" id="J_select">
-			<option value="">dsfsfsdf</option>
-			<option value="">dsfsfsdf</option>
-			<option value="">dsfsfsdf</option>
-			<option value="">dsfsfsdf</option>
-			<option value="">dsfsfsdf</option>
-			<option value="">dsfsfsdf</option>
-		</select>
+		</div> -->
 	</div>
 	
 	<script type="text/javascript" src="js/zepto.min.js"></script>
@@ -150,7 +140,10 @@
 		});
 
 		$("body").bind("touchmove", function(e) {
-			e.preventDefault();
+			var scrollTop = $("body").scrollTop();
+			if(scrollTop < 0) {
+				e.preventDefault();
+			}
 		});
 	</script>
 </body>
