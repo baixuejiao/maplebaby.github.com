@@ -143,11 +143,10 @@
 
 		$("body").bind("touchmove", function(e) {
 			var scrollTop = $("body").scrollTop();
-			if(scrollTop < 0) {
+			if(scrollTop < 10) {
 				e.preventDefault();
 			}
 		});
-
 		$("body").animate({"scrollTop": 10});;
 	</script>
 </body>
