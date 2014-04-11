@@ -130,12 +130,10 @@
 		$("#app").bind("touchstart", function(e) {
 			var th = e.touches[0];
 			start_y = th.clientY;
-			e.preventDefault();
 		});
 		$("#app").bind("touchmove", function(e) {
 			var th = e.touches[0];
 			current_y = th.clientY;
-
 			var scrollTop = $("body").scrollTop();
 			var dist = current_y - start_y;
 
