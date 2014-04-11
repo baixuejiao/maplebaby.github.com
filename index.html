@@ -148,6 +148,10 @@
 				flag = false;
 			}
 		});
+
+		$("body").bind("touchmove", function(e) {
+			e.preventDefault();
+		});
 	</script>
 </body>
 </html>
