@@ -103,8 +103,7 @@
 		</div> -->
 	</div>
 	
-	<script type="text/javascript" src="js/zepto.min.js"></script>
-	<script type="text/javascript" src="js/touch.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 	<script>
 		// $("body").swipeDown(function(e) {
 		// 	console.log(e);
@@ -134,7 +133,10 @@
 		});
 		$("#app").bind("touchend", function(e) {
 			if(flag) {
-				$("#app").animate({"marginTop": 0});
+				$("#app").animate({
+					"marginTop": 0, 
+					"scrollTop": 10
+				});
 				flag = false;
 			}
 		});
@@ -145,6 +147,8 @@
 				e.preventDefault();
 			}
 		});
+
+		$("body").animate({"scrollTop": 10});;
 	</script>
 </body>
 </html>
