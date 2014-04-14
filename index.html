@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
 	<meta name="apple-mobile-web-app-title" content="爱游游">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
 	<link rel="stylesheet" href="css/main.css">
 	<title>爱游游</title>
@@ -19,7 +19,8 @@
 </head>
 <body>
 	<div class="loading">
-		正在加载中。。。
+		<img id="J_loading" class="fn-hide" src="img/ajax-loading.gif" alt="">
+		<!-- <p>正在加载中。。。</p> -->
   	</div>
 	<div id="app">
 
@@ -29,10 +30,10 @@
 
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="btn grey">
-				<span class="span">注册的</span>
+				<span class="span">注册</span>
 			</a>
 			<a href="javascript:void(0);" class="btn">
-				<span class="span">&#160;登录&#160;</span>
+				<span class="span">登录</span>
 			</a>
 		</div>
 
@@ -43,47 +44,28 @@
 			<div class="child">新手指南</div>
 		</div>
 
-		<a href="list.html" class="item">
-			世界OL
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			诛仙OL
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			刀塔传奇
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			神雕侠侣
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			我叫MT
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			冰雪奇缘
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			冰雪奇缘
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			冰雪奇缘
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			冰雪奇缘
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			冰雪奇缘
-			<i class="arr"></i>
-		</a>
-
+		<div id="J_gameList" class="game-list">
+			<a href="list.html" class="item">
+				世界OL
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				诛仙OL
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				刀塔传奇
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				神雕侠侣
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				我叫MT
+				<i class="arr"></i>
+			</a>
+		</div>
 
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="btn grey">
@@ -105,49 +87,53 @@
 	
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 	<script>
-		// $("body").swipeDown(function(e) {
-		// 	console.log(e);
-		// 	var elem = $(e.target);
-		// 	var dist = elem.clientTop;
+		var start_y = 0, 
+			current_y,
+			flag = false, 
+			flush_flag = false;
 
-		// 	if(dist>0 && dist<50) {
-		// 		$("#app").animate({"marginTop": dist}, 10);
-		// 	}
-		// });
-
-		var start_y = 0, current_y, h, flag = false;
 		$("#app").bind("touchstart", function(e) {
-			var th = e.touches[0];
+			var th = e.originalEvent.touches[0];
 			start_y = th.clientY;
-		});
-		$("#app").bind("touchmove", function(e) {
-			var th = e.touches[0];
+		}).bind("touchmove", function(e) {
+			var th = e.originalEvent.touches[0];
 			current_y = th.clientY;
 			var scrollTop = $("body").scrollTop();
 			var dist = current_y - start_y;
 
 			if(scrollTop<=0 && dist>0 && dist<50) {
+				e.preventDefault();
+
+				// 下拉到一半的时候显示
+				if(dist > 25) {
+					$("#J_loading").fadeIn();
+					flush_flag = true;
+				}
+
 				$("#app").animate({"marginTop": dist}, 10);
 				flag = true;
 			}
-		});
-		$("#app").bind("touchend", function(e) {
+		}).bind("touchend", function(e) {
 			if(flag) {
-				$("#app").animate({
-					"marginTop": 0, 
-					"scrollTop": 10
-				});
+				$("#app").animate({"marginTop": 0});
+				$("#J_loading").fadeOut();
+				// @TODO 刷新
+				if(flush_flag) {
+					flush_all()
+					flush_flag = false;
+				}
 				flag = false;
 			}
 		});
 
-		$("body").bind("touchmove", function(e) {
-			var scrollTop = $("body").scrollTop();
-			if(scrollTop < 10) {
-				e.preventDefault();
-			}
-		});
-		$("body").animate({"scrollTop": 10});;
+		function flush_all() {
+			$("#J_gameList")
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>');
+		}
 	</script>
 </body>
 </html>
