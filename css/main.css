@@ -249,13 +249,14 @@ a {
 }
 .nav-action .nav-title {
 	color: #FFF;
-	font-size: 20px;
+	font-size: 18px;
+	font-weight: normal;
 	text-align: center;
 }
 .nav-action .prev, .nav-action .next {
 	position: absolute;
 	color: #FFF;
-	font-size: 20px;
+	font-size: 28px;
 	font-weight: bold;
 	text-decoration: none;
 }
