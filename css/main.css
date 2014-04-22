@@ -223,7 +223,42 @@ a {
 }
 
 #app {
+	margin-top: 65px;
 	padding-top: 5px;
 	padding-bottom: 10px;
 	background-color: #EBECEE;
+}
+
+.top-bar {
+	background-color: #221A0F;
+	color: #FFF;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+.top-bar .nav-action {
+	position: relative;
+	margin-top: 15px;
+	height: 50px;
+	line-height: 50px;
+}
+.nav-action .nav-title {
+	color: #FFF;
+	font-size: 20px;
+	text-align: center;
+}
+.nav-action .prev, .nav-action .next {
+	position: absolute;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.nav-action .prev {
+	left: 5px;
+	top: 0;
+}
+.nav-action .next {
+	right: 5px;
+	top: 0;
 }
