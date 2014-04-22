@@ -19,7 +19,8 @@
 </head>
 <body>
 	<div class="loading">
-		正在加载中。。。
+		<img id="J_loading" width="30" height="30" class="fn-hide" src="img/ajax-loading.gif" alt="">
+		<!-- <p>正在加载中。。。</p> -->
   	</div>
 	
 	<div class="top-bar">
@@ -38,10 +39,10 @@
 
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="btn grey">
-				<span class="span">注册的</span>
+				<span class="span">注册</span>
 			</a>
 			<a href="javascript:void(0);" class="btn">
-				<span class="span">&#160;登录&#160;</span>
+				<span class="span">登录</span>
 			</a>
 		</div>
 
@@ -52,30 +53,28 @@
 			<div class="child">新手指南</div>
 		</div>
 
-		<a href="list.html" class="item">
-			世界OL
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			诛仙OL
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			刀塔传奇
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			神雕侠侣
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			我叫MT
-			<i class="arr"></i>
-		</a>
-		<a href="list.html" class="item">
-			冰雪奇缘
-			<i class="arr"></i>
-		</a>
+		<div id="J_gameList" class="game-list">
+			<a href="list.html" class="item">
+				世界OL
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				诛仙OL
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				刀塔传奇
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				神雕侠侣
+				<i class="arr"></i>
+			</a>
+			<a href="list.html" class="item">
+				我叫MT
+				<i class="arr"></i>
+			</a>
+		</div>
 
 		<div class="btn-group">
 			<a href="javascript:void(0);" class="btn grey">
@@ -86,47 +85,64 @@
 			</a>
 		</div>
 
-		<div class="action-bar">
+		<!-- <div class="action-bar">
 			<a href="index.html" class="bar-item active">&nbsp;&nbsp;首页&nbsp;&nbsp;</a>
 			<a href="list.html" class="bar-item">游戏列表</a>
 			<a href="test.html" class="bar-item">&nbsp;&nbsp;搜索&nbsp;&nbsp;</a>
 			<a href="test.html" class="bar-item">我的交易</a>
 			<a href="test.html" class="bar-item">&nbsp;&nbsp;更多&nbsp;&nbsp;</a>
-		</div>
+		</div> -->
 	</div>
 	
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 	<script>
-		var start_y = 0, current_y, h, flag = false;
-		// $("#app").bind("swipeDown", function(e) {
-		// 	console.log(e);
-		// });
+		var start_y = 0, 
+			current_y,
+			flag = false, 
+			flush_flag = false;
 
 		$("#app").bind("touchstart", function(e) {
 			var th = e.originalEvent.touches[0];
 			start_y = th.clientY;
-			e.preventDefault();
-		});
-		$("#app").bind("touchmove", function(e) {
-			console.log(e);
+		}).bind("touchmove", function(e) {
 			var th = e.originalEvent.touches[0];
 			current_y = th.clientY;
-
+			var scrollTop = $("body").scrollTop();
 			var dist = current_y - start_y;
 
-			if(dist>0 && dist<50) {
+			if(scrollTop<=0 && dist>0 && dist<50) {
+				e.preventDefault();
+
+				// 下拉到一半的时候显示
+				if(dist > 25) {
+					$("#J_loading").fadeIn();
+					flush_flag = true;
+				}
+
 				$("#app").animate({"marginTop": dist}, 10);
 				flag = true;
-			} else if(dist<0){
-				$("#app").css({"marginTop": dist});
 			}
-		});
-		$("#app").bind("touchend", function(e) {
+		}).bind("touchend", function(e) {
 			if(flag) {
 				$("#app").animate({"marginTop": 0});
+				$("#J_loading").fadeOut();
+				// @TODO 刷新
+				if(flush_flag) {
+					flush_all()
+					flush_flag = false;
+				}
 				flag = false;
 			}
 		});
+
+		function flush_all() {
+			$("#J_gameList")
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>')
+				.append('<a href="list.html" class="item">冰雪奇缘<i class="arr"></i></a>');
+		}
 	</script>
 </body>
 </html>
