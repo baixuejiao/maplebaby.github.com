@@ -18,7 +18,7 @@
 	<link href="startup.png" rel="apple-touch-startup-image">
 </head>
 <body>
-	<div id="app" style="-Webkit-overflow-scrolling: touch; margin-top: 0;">
+	<div id="app" style="-webkit-overflow-scrolling: touch; height: 400px; overflow-y: scroll; margin-top: 0; overflow-scrolling: touch;">
 		<h3 class="list-title">A</h3>
 		<div class="list-group">
 			<a href="javascritp:void(0);" class="list-item">菜单撒谎大事</a>
@@ -72,7 +72,7 @@
 
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 	<script>
-		$('body').on('click', function(e) {
+		$('body').on('touchmove', function(e) {
 			e.preventDefault();
 		});
 	</script>
