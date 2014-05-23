@@ -1,0 +1,201 @@
+@import "common/base.less";
+@import "common/reset.less";
+@import "common/function.less";
+@import "common/css3.less";
+
+body {
+	background: #EAEDED;
+	font: 14px/1.5 @sansFontFamily;
+}
+
+// -------- 页面顶部部分 -----------
+.pg-hd {
+	height: 660px;
+	background: #F24F44 url("@{basePath}/bg-hd.jpg@{version}") center 0 no-repeat;
+}
+
+/**
+ * 顶部logo
+ */
+.logo-container {
+	width: 1200px;
+	.center-block();
+	height: 110px;
+	padding-top: 10px;
+	.logo {
+		display: block;
+		width: 430px;
+		height: 90px;
+		margin-left: 110px;
+		background: url("@{basePath}/logo.png@{version}") 0 0 no-repeat;
+		strong {
+			display: none;
+		}
+	}
+}
+
+/**
+ * 顶部banner
+ */
+.banner {
+	position: relative;
+	width: 1200px;
+	.center-block();
+	.banner-img {
+		position: absolute;
+		width: 704px;
+		height: 341px;
+		background: url("@{basePath}/banner.png@{version}") 0 0 no-repeat;
+		left: 44px;
+		top: 69px;
+	}
+	.download {
+		position: absolute;
+		right: 100px;
+		top: 72px;
+		.qr-code {
+			width: 140px;
+			height: 140px;
+			margin-bottom: 47px;
+			.center-block();
+			background: url("@{basePath}/qr-code.png@{version}") 0 0 no-repeat;
+		}
+		.btn {
+			display: block;
+			width: 290px;
+			height: 70px;
+			background: url("@{basePath}/bg-btn.png@{version}") 0 0 no-repeat;
+			.box-shadow(1px 1px 3px #333);
+			span {
+				display: none;
+			}
+		}
+		.app-info {
+			margin-top: 20px;
+			font-size: 14px;
+			color: #F5B5B1
+		}
+	}
+}
+
+
+// -------- 页面内容部分 -----------
+.pg-bd {
+
+}
+
+/**
+ * 图片展示
+ */
+.mod-show {
+	.mod-content {
+		.clearfix();
+		width: 980px;
+		.center-block();
+		padding: 75px 110px;
+
+		.mod-item {
+			.fn-left();
+			width: 490px;
+		}
+	}
+
+	&.white {
+		background-color: #FFF;
+	}
+
+	&.grey {
+		background-color: #FAFAFA;
+	}
+}
+
+/**
+ * 文本展示
+ */
+.mod-info {
+	margin-top: 45px;
+	.mod-info-title, .mod-info-sub-title {
+		text-align: center;
+	}
+	.mod-info-title {
+		font-size: 48px;
+	}
+	.mod-info-sub-title {
+		font-size: 18px;
+		margin-top: 5px;
+		margin-bottom: 22px;
+	}
+	.mod-info-desc {
+		color: #807B73;
+		line-height: 36px;
+	}
+
+	&.yellow {
+		margin-right: 60px;
+		.mod-info-title {
+			color: #FFA500;
+		}
+		.mod-info-sub-title {
+			color: #FFAA00;
+		}
+	}
+
+	&.green {
+		margin-left: 60px;
+		.mod-info-title {
+			color: #30C728;
+		}
+		.mod-info-sub-title {
+			color: #30C728;
+		}
+	}
+
+	&.blue {
+		margin-right: 60px;
+		.mod-info-title {
+			color: #45BAF5;
+		}
+		.mod-info-sub-title {
+			color: #45BAF5;
+		}
+	}
+}
+
+/**
+ * 图片
+ */
+.ico-img1, .ico-img2, .ico-img3 {
+	display: block;
+	width: 490px;
+}
+.ico-img1 {
+	height: 300px;
+	background: url("@{basePath}/img-row1.jpg@{version}") 0 0 no-repeat;
+}
+.ico-img2 {
+	height: 300px;
+	background: url("@{basePath}/img-row2.jpg@{version}") 0 0 no-repeat;
+}
+.ico-img3 {
+	height: 320px;
+	background: url("@{basePath}/img-row3.jpg@{version}") 0 0 no-repeat;
+}
+
+
+// -------- 页面底部部分 -----------
+/**
+ * 底部版权
+ */
+.pg-ft {
+	background-color: #3C3F42;
+	.pg-ft-content {
+		width: 1200px;
+		padding: 34px 0;
+		.center-block();
+		color: #999;
+		text-align: center;
+		p {
+			line-height: 38px;
+		}
+	}
+}

@@ -1,0 +1,180 @@
+@import "common/base.less";
+@import "common/reset.less";
+@import "common/function.less";
+@import "common/css3.less";
+
+
+html {
+	background-color: #EBEBEB;
+}
+
+/**
+ * download button
+ */
+.btn-download {
+	display: inline-block;
+	box-shadow: 1px 1px 3px #333;
+	width: 190px;
+	height: 45px;
+	background: #FFF7F0 url("@{basePath}/bg-btn-app.png@{version}") 0 0 no-repeat;
+	.background-size(190px 100px);
+	.span {
+		display: none;
+	}
+	&:hover {
+		background-position: 0 -55px;
+	}
+}
+.btn-top {
+	display: inline-block;
+	width: 121px;
+	height: 31px;
+	background: #FFF url("@{basePath}/btn-top.png@{version}") 0 0 no-repeat;
+	.background-size(121px 31px);
+	.span {
+		display: none;
+	}
+}
+
+/**
+ * info box
+ */
+.mod-info {
+	padding-top: 14px;
+	.mod-info-title, .mod-info-sub-title {
+		text-align: center;
+	}
+	.mod-info-title {
+		font-size: 24px;
+	}
+	.mod-info-sub-title {
+		font-size: 16px;
+		margin-bottom: 16px;
+	}
+	.mod-info-desc {
+		color: #808080;
+		font-size: 12px;
+		line-height: 20px;
+		padding: 0 27px;
+	}
+
+	&.yellow {
+		.mod-info-title {
+			color: #FFA500;
+		}
+		.mod-info-sub-title {
+			color: #FFAA00;
+		}
+	}
+
+	&.green {
+		.mod-info-title {
+			color: #30C728;
+		}
+		.mod-info-sub-title {
+			color: #30C728;
+		}
+	}
+
+	&.blue {
+		.mod-info-title {
+			color: #459DF5;
+		}
+		.mod-info-sub-title {
+			color: #459DF5;
+		}
+	}
+}
+
+/**
+ * model show
+ */
+.mod-show {
+	height: 440px;
+	.mod-content {}
+	.mod-img {
+		text-align: center;
+	}
+
+	&.white {
+		background-color: #FFF8F0;
+	}
+
+	&.green {
+		background-color: #EDF7ED;
+	}
+
+	&.blue {
+		background-color: #F2F9FF;
+	}
+}
+
+/**
+ * layout
+ */
+.hd {
+	position: relative;
+	height: 536px;
+	background-color: #EF4B3F;
+}
+.logo {
+	height: 75px;
+	background: #EF4B3F url("@{basePath}/bg-top-logo.png@{version}") 5px 5px no-repeat;
+	.background-size(197px 75px);
+	img {
+		margin-left: 3px;
+		margin-top: 5px;
+	}
+}
+.banner {
+	height: 287px;
+	background: #EF4B3F url("@{basePath}/app-banner.png@{version}") center 50px no-repeat;
+	.background-size(339px 172px);
+}
+.app-download {
+	text-align: center;
+	.btn-download {
+		margin-bottom: 5px;
+	}
+}
+.app-info {
+	font-size: 12px;
+	color: #F7A59F;
+}
+
+.arrow {
+	position: absolute;
+	bottom: 20px;
+	display: block;
+	width: 25px;
+	height: 17px;
+	left: 50%;
+	margin-left: -13px;
+	background: url("@{basePath}/app-arrow.png@{version}") 0 0 no-repeat;
+	.background-size(25px 17px);
+}
+
+.ico-img1 {
+	margin-top: 30px;
+}
+.ico-img2 {
+	margin-top: 17px;
+}
+.ico-img3 {
+	margin-top: 32px;
+}
+
+.ft {
+	background-color: #EBEBEB;
+	height: 122px;
+	color: #9E9E9E;
+	font-size: 12px;
+	text-align: center;
+	padding-top: 20px;
+	.btn-top {
+		margin-bottom: 10px;
+	}
+	.copyright {
+		line-height: 20px;
+	}
+}
