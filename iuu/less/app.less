@@ -7,6 +7,9 @@
 html {
 	background-color: #EBEBEB;
 }
+a {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 /**
  * download button
@@ -21,7 +24,7 @@ html {
 	.span {
 		display: none;
 	}
-	&:hover {
+	&:hover, &:active {
 		background-position: 0 -55px;
 	}
 }
@@ -147,6 +150,18 @@ html {
 	color: #F7A59F;
 }
 
+
+@-webkit-keyframes 'breath' {
+	from {
+		opacity:0.1;
+	}
+	50% {
+		opacity:1;
+	}
+	to {
+		opacity:0.1;
+	}
+}
 .arrow {
 	position: absolute;
 	bottom: 20px;
@@ -158,6 +173,11 @@ html {
 	margin-left: -13px;
 	background: url("@{basePath}/app-arrow.png@{version}") 0 0 no-repeat;
 	.background-size(25px 17px);
+
+	-webkit-animation-name: breath;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
 }
 
 .ico-img1 {
