@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<title>爱游游二维码下载</title>
 	<link rel="icon" href="favicon.ico" />
-	<style>body{margin:0;padding:0;background-color:#FFF url(img/iuu-weichat.jpg?v=20140527) center 0;}</style>
+	<style>body{margin:0;padding:0;background:#FFF url(img/iuu-weichat.jpg?v=20140527) center 0 no-repeat;background-size: 360px 517px;}</style>
 	<script type="text/javascript">
 		var Terminal = {
 			platform : function(){
@@ -24,11 +24,13 @@
 			language : (navigator.browserLanguage || navigator.language).toLowerCase()
 		};
 
-		if(Terminal.platform.weChat){
+		if(Terminal.platform.weChat) {
 			// @TODO 微信不跳转
-		} else {
+		} else if(Terminal.platform.android) {
 			// @TODO android版
 			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk?from=xcode";
+		} else {
+			// @TODO 其他版（暂无）
 		}
 	</script>
 </head>
