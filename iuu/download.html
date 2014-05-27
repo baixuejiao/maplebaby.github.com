@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<title>爱游游二维码下载</title>
 	<link rel="icon" href="favicon.ico" />
-
+	<style>body{background-color:#FFF;text-align:center;}#weichat{margin: 0 auto;}</style>
 	<script type="text/javascript">
 		var Terminal = {
 			platform : function(){
@@ -22,25 +22,17 @@
 				};
 			}(),
 			language : (navigator.browserLanguage || navigator.language).toLowerCase()
-		}
+		};
 
 		if(Terminal.platform.weChat){
 			// @TODO 微信不跳转
-			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk";
-		} else if(Terminal.platform.android){
+		} else {
 			// @TODO android版
-			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk";
-		}else if(Terminal.platform.iPhone){
-			// @TODO iPhone版不跳转
-			
-		}else if(Terminal.platform.iPad){
-			// @TODO iPad版不跳转
-			
+			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk?from=xcode";
 		}
-		
 	</script>
 </head>
 <body>
-	这里放个图片
+	<img id="weichat" src="img/iuu-weichat.jpg" width="360" height="517" alt="微信下载引导" />
 </body>
 </html>
