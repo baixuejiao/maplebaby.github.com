@@ -21,16 +21,17 @@
 					weChat: u.indexOf('MicroMessenger') > -1
 				};
 			}(),
-			language : (navigator.browserLanguage || navigator.language).toLowerCase()
+			language: (navigator.browserLanguage || navigator.language).toLowerCase()
 		};
 
 		if(Terminal.platform.weChat) {
 			// @TODO 微信不跳转
 		} else if(Terminal.platform.android) {
 			// @TODO android版
-			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk?from=xcode";
+			location.href = "http://iuu.changyou.com/iuu-release-1.0.apk?from=xcode";
 		} else {
 			// @TODO 其他版（暂无）
+			location.href = "http://iuu.changyou.com/index.html";
 		}
 	</script>
 </head>
