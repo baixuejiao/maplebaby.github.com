@@ -24,6 +24,10 @@
 			language : (navigator.browserLanguage || navigator.language).toLowerCase()
 		}
 
+		if(Terminal.platform.weChat){
+			alert("fsdfdf");
+		}
+
 		if(Terminal.platform.android){
 			// @TODO android版
 			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk";
