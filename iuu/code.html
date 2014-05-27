@@ -25,21 +25,22 @@
 		}
 
 		if(Terminal.platform.weChat){
-			alert("fsdfdf");
-		}
-
-		if(Terminal.platform.android){
+			// @TODO 微信不跳转
+			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk";
+		} else if(Terminal.platform.android){
 			// @TODO android版
 			location.href = "http://maplebaby.github.io/download/CMall_1.0.1.apk";
 		}else if(Terminal.platform.iPhone){
-			// @TODO iPhone版
+			// @TODO iPhone版不跳转
+			
 		}else if(Terminal.platform.iPad){
-			// @TODO iPad版
+			// @TODO iPad版不跳转
+			
 		}
-		// @TODO 微信不跳转
+		
 	</script>
 </head>
 <body>
-	
+	这里放个图片
 </body>
 </html>
