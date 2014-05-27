@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+	<meta name="apple-mobile-web-app-title" content="爱游游">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>爱游游二维码下载</title>
+	<link rel="icon" href="favicon.ico" />
+
+	<script type="text/javascript">
+		var Terminal = {
+			platform : function(){
+				var u = navigator.userAgent, app = navigator.appVersion;
+				return {
+					android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+					iPhone: u.indexOf('iPhone') > -1 ,
+					iPad: u.indexOf('iPad') > -1,
+					weChat: u.indexOf('MicroMessenger') > -1
+				};
+			}(),
+			language : (navigator.browserLanguage || navigator.language).toLowerCase()
+		}
+
+		if(Terminal.platform.android){
+			// @TODO android版
+			location.href = "http://maplebaby.github.io/app.html";
+		}else if(Terminal.platform.iPhone){
+			// @TODO iPhone版
+		}else if(Terminal.platform.iPad){
+			// @TODO iPad版
+		}
+		// @TODO 微信不跳转
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
