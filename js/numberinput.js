@@ -42,6 +42,11 @@ define('numberinput', ['$', 'widget'], function(require, exports, module) {
 		_decrease: function(e) {
 			var elemInput = this.get('number');
 			var numStr = elemInput.val();
+			if(numStr == "") {
+				elemInput.val(this.get("min")).trigger('keyup');
+				return;
+			}
+
 			if(this._isNum(numStr)) {
 				var num = parseInt(numStr);
 				elemInput.val(num - 1).trigger('keyup');
@@ -52,6 +57,11 @@ define('numberinput', ['$', 'widget'], function(require, exports, module) {
 		_increase: function(e) {
 			var elemInput = this.get('number');
 			var numStr = elemInput.val();
+			if(numStr == "") {
+				elemInput.val(this.get("min")).trigger('keyup');
+				return;
+			}
+
 			if(this._isNum(numStr)) {
 				var num = parseInt(numStr);
 				elemInput.val(num + 1).trigger('keyup');
