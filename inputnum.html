@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.m-number {
+			font-size: 0;
+		}
+		.m-decrease, .m-increase {
+			display: inline-block;
+			vertical-align: middle;
+			width: 25px;
+			height: 25px;
+			line-height: 26px;
+			font-size: 14px;
+			text-align: center;
+			color: #332E2E;
+			background-color: #F5F3F3;
+			border: 1px solid #D5CCCC;
+			text-decoration: none;
+		}
+		.m-decrease.f-disable, .m-increase.f-disable {
+			background-color: #E7DDDD;
+			color: #C5BCBC;
+			cursor: default;
+			cursor: not-allowed;
+		}
+		.m-decrease.f-disable:hover, .m-increase.f-disable:hover{
+			background-color: #E7DDDD;
+			color: #C5BCBC;
+		}
+		.m-decrease:hover, .m-increase:hover {
+			background-color: #E4e1e1;
+		}
+		.m-number .m-number-input {
+			font-size: 12px;
+			width: 48px;
+			text-align: center;
+			height: 23px;
+			outline: none;
+			border: 1px solid #D5CCCC;
+			border-left: none;
+			border-right: none;
+			vertical-align: middle;
+			color: #666;
+		}
+		.m-number .m-number-input:focus {
+			box-shadow: inset 1px 1px 3px #E7E6E6;
+		}
+
+		#J_LeftNum {
+			margin-top: 10px;
+			font-size: 12px;
+			color: #666;
+			margin-left: 1px;
+		}
+		#J_LeftNum.error {
+			color: #F01212;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="m-number" id="J_GoodNum" data-widget="numberinput" data-min="1" data-max="5">
+		<a class="m-decrease" data-role="decrease" href="javascript:;">-</a>
+		<input class="m-number-input" data-role="number" type="text" value="1" />
+		<a class="m-increase" data-role="increase" href="javascript:;">+</a>
+	</div>
+
+	<span id="J_LeftNum"></span>
+
+	<script id="seajsnode" src="js/seajs/seajs/2.2.1/sea.js"></script>
+	<script src="js/config.js"></script>
+	<script>seajs.use('index');</script>
+</body>
+</html>
